@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+import Navigation from '../components/navigation.astro';
+import Hero from '../components/hero.astro';
+import ImageShowcase from '../components/image-showcase.astro';
+import FeatureStrip from '../components/feature-strip.astro';
+import Testimonial from '../components/testimonial.astro';
+import Footer from '../components/footer.astro';
+import { Image } from 'astro:assets';
+
+import heroImage from '../assets/images/property/chalets-hillside.jpg';
+import stargazing from '../assets/images/property/stargazing.jpg';
+import birdwatching from '../assets/images/property/birdwatching.jpg';
+
+import tennisNight from '../assets/images/facilities/tennis-night.jpg';
+import tennisDay from '../assets/images/facilities/tennis-day.jpg';
+import bikes from '../assets/images/facilities/mountain-bikes.jpg';
+import gamesRoom from '../assets/images/facilities/games-room.jpg';
+import donkey from '../assets/images/facilities/donkey.jpg';
+import freshEggs from '../assets/images/facilities/fresh-eggs.jpg';
+import chickens from '../assets/images/facilities/chickens.jpg';
+import garden from '../assets/images/facilities/garden.jpg';
+import bees from '../assets/images/facilities/bees.jpg';
+---
+
+<BaseLayout
+  title="The Property"
+  description="100 acres beneath the Dorrigo escarpment. Tennis court, mountain bikes, fresh eggs, friendly donkeys, and the Never Never River a short walk away. Promised Land Retreat, Bellinger Valley."
+>
+  <Navigation slot="header" transparent />
+
+  <Hero
+    image={heroImage}
+    imageAlt="Two timber chalets nestled on a green hillside among eucalypts, with the Dorrigo escarpment dominating the sky beyond"
+    title="100 Acres of Valley"
+    subtitle="More than accommodation. A working property with its own rhythm, its own character, and more to explore than you'd expect."
+    overlay="gradient"
+    height="tall"
+  />
+
+  <!-- Intro -->
+  <section class="prop-intro">
+    <div class="container">
+      <div class="prop-intro__content fade-in">
+        <p class="lead">
+          Promised Land Retreat isn't just three chalets — it's 100 acres of rolling hillside beneath one of the most dramatic escarpments in New South Wales. Fresh eggs from the coop, fruit from the orchard, honey from the hives. A floodlit tennis court for games under the stars. Mountain bikes for the Promised Land Loop. And a crystal clear river a short walk through the trees.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stargazing -->
+  <ImageShowcase
+    image={stargazing}
+    alt="A couple silhouetted on their chalet deck under a sky dense with stars"
+    caption="No city lights means a sky full of stars. The Southern Cross, the Milky Way — all yours."
+    aspectRatio="cinematic"
+  />
+
+  <!-- The River -->
+  <FeatureStrip
+    image={birdwatching}
+    imageAlt="Binoculars and a well-worn field guide rest on a timber table as a guest birdwatches from the deck"
+    title="The Never Never River"
+    description="Named by settlers who never wanted to leave, the Never Never flows crystal clear over granite boulders through ancient rainforest just a short walk from the property. Swimming holes with water so clean you can see metres to the bottom, sunbaking rocks in the middle of the creek, and a canopy of hoop pines and gums overhead. It's the kind of swimming spot city people dream about."
+    imagePosition="left"
+  />
+
+  <!-- Activities Grid -->
+  <section class="activities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Things to Do</span>
+        <h2>Active or Not. Your Call.</h2>
+      </div>
+
+      <div class="activities__grid">
+        <div class="activity-card fade-in delay-1">
+          <div class="activity-card__image-wrap">
+            <Image
+              src={tennisNight}
+              alt="Floodlit tennis court under dramatic storm clouds at dusk"
+              widths={[400, 700]}
+              sizes="(min-width: 768px) 33vw, 100vw"
+              class="activity-card__image"
+              quality={80}
+            />
+          </div>
+          <h4 class="activity-card__title">Tennis</h4>
+          <p class="activity-card__desc">Full-size artificial grass court, floodlit for night games. Racquets and balls provided. Play under the stars with the mountains as your backdrop.</p>
+        </div>
+
+        <div class="activity-card fade-in delay-2">
+          <div class="activity-card__image-wrap">
+            <Image
+              src={bikes}
+              alt="Quality mountain bikes lined up and ready for guests"
+              widths={[400, 700]}
+              sizes="(min-width: 768px) 33vw, 100vw"
+              class="activity-card__image"
+              quality={80}
+            />
+          </div>
+          <h4 class="activity-card__title">Mountain Bikes</h4>
+          <p class="activity-card__desc">Quality bikes for guests. Ride the Promised Land Loop — swimming holes, mountain vistas, and an easy cycle to the Gleniffer swimming hole.</p>
+        </div>
+
+        <div class="activity-card fade-in delay-3">
+          <div class="activity-card__image-wrap">
+            <Image
+              src={gamesRoom}
+              alt="Games room with pool table and ping-pong table"
+              widths={[400, 700]}
+              sizes="(min-width: 768px) 33vw, 100vw"
+              class="activity-card__image"
+              quality={80}
+            />
+          </div>
+          <h4 class="activity-card__title">Games Room</h4>
+          <p class="activity-card__desc">Pool table, ping-pong, board games, books, and DVDs. For rainy days, lazy afternoons, or when the kids need entertaining.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farm Life -->
+  <section class="farm-life">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Farm Life</span>
+        <h2>A Working Property</h2>
+        <p class="lead">
+          This isn't a manicured resort. It's a real property with real animals, real gardens, and real food.
+        </p>
+      </div>
+
+      <div class="farm-grid">
+        <div class="farm-item farm-item--large fade-in">
+          <div class="farm-item__image-wrap">
+            <Image
+              src={donkey}
+              alt="A friendly donkey looking directly at the camera"
+              widths={[500, 800]}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              class="farm-item__image"
+              quality={80}
+            />
+          </div>
+          <div class="farm-item__content">
+            <h4>Friendly Donkeys</h4>
+            <p>They'll come over to say hello. They're genuine characters and a highlight for kids and adults alike.</p>
+          </div>
+        </div>
+
+        <div class="farm-item fade-in delay-1">
+          <div class="farm-item__image-wrap">
+            <Image
+              src={freshEggs}
+              alt="Three fresh eggs nestled in golden straw"
+              widths={[400, 600]}
+              sizes="(min-width: 768px) 25vw, 50vw"
+              class="farm-item__image"
+              quality={80}
+            />
+          </div>
+          <div class="farm-item__content">
+            <h4>Fresh Eggs</h4>
+            <p>Help yourself from the chicken coop each morning. Nothing beats eggs this fresh for breakfast.</p>
+          </div>
+        </div>
+
+        <div class="farm-item fade-in delay-2">
+          <div class="farm-item__image-wrap">
+            <Image
+              src={garden}
+              alt="The veggie garden and fruit orchard on the property"
+              widths={[400, 600]}
+              sizes="(min-width: 768px) 25vw, 50vw"
+              class="farm-item__image"
+              quality={80}
+            />
+          </div>
+          <div class="farm-item__content">
+            <h4>Garden & Orchard</h4>
+            <p>Veggie garden and fruit orchard — guests are welcome to pick what's ripe. Citrus trees heavy with fruit, herbs for your cooking.</p>
+          </div>
+        </div>
+
+        <div class="farm-item fade-in delay-3">
+          <div class="farm-item__image-wrap">
+            <Image
+              src={bees}
+              alt="Honey bees on the property"
+              widths={[400, 600]}
+              sizes="(min-width: 768px) 25vw, 50vw"
+              class="farm-item__image"
+              quality={80}
+            />
+          </div>
+          <div class="farm-item__content">
+            <h4>Honey Bees</h4>
+            <p>Bees on site, doing their work. The property buzzes with life in the truest sense.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="testimonial-section testimonial-section--warm">
+    <div class="container">
+      <Testimonial
+        quote="The smell of petrol fumes is exchanged for an unlimited supply of fresh air with subtle floral and grassy notes."
+        author="Ben Direen"
+        context="Guest"
+      />
+    </div>
+  </section>
+
+  <!-- Birdwatching -->
+  <section class="birds">
+    <div class="container">
+      <div class="birds__content fade-in">
+        <span class="section-label">Birdwatching</span>
+        <h2>The Dawn Chorus</h2>
+        <p class="lead">
+          Binoculars and a field guide are provided in every chalet. The property is alive with birdlife — Whip Birds calling through the understorey, Kookaburras laughing at dawn, Honeyeaters darting through the grevillea, Cockatoos wheeling overhead. Sit on the deck with a coffee and the binoculars. You won't be bored.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift vouchers note -->
+  <section class="gift-section">
+    <div class="container">
+      <div class="gift-content fade-in">
+        <h3>Gift Vouchers</h3>
+        <p>Know someone who needs to escape? Gift vouchers are available for any amount. Call Sophie on <a href="tel:0494107195">0494 107 195</a> or <a href="mailto:sophie@promisedlandretreat.com.au">email her</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .prop-intro {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .prop-intro__content {
+    max-width: 800px;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header .lead {
+    max-width: 640px;
+  }
+
+  /* Activities */
+  .activities {
+    padding: var(--space-2xl) 0;
+  }
+
+  .activities__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .activities__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .activity-card__image-wrap {
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    margin-bottom: var(--space-sm);
+  }
+
+  .activity-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease-out);
+  }
+
+  .activity-card:hover .activity-card__image {
+    transform: scale(1.03);
+  }
+
+  .activity-card__title {
+    margin-bottom: 0.5rem;
+  }
+
+  .activity-card__desc {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* Farm life */
+  .farm-life {
+    padding: var(--space-2xl) 0;
+    background: var(--mist-warm);
+  }
+
+  .farm-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .farm-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .farm-item--large {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+  }
+
+  .farm-item__image-wrap {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .farm-item--large .farm-item__image-wrap {
+    aspect-ratio: 3 / 4;
+    max-height: 500px;
+  }
+
+  .farm-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease-out);
+  }
+
+  .farm-item:hover .farm-item__image {
+    transform: scale(1.03);
+  }
+
+  .farm-item__content {
+    padding: var(--space-sm) 0;
+  }
+
+  .farm-item__content h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .farm-item__content p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* Testimonial */
+  .testimonial-section--warm {
+    background: var(--mist-warm);
+  }
+
+  /* Birds */
+  .birds {
+    padding: var(--space-2xl) 0;
+  }
+
+  .birds__content {
+    max-width: 680px;
+  }
+
+  /* Gift */
+  .gift-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .gift-content {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: var(--space-xl);
+    border: 1px solid var(--cloud);
+  }
+
+  .gift-content h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .gift-content p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin: 0 auto;
+  }
+
+  .gift-content a {
+    color: var(--timber);
+    font-weight: 500;
+  }
+</style>

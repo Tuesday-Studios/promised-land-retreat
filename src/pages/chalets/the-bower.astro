@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import Navigation from '../../components/navigation.astro';
+import ChaletDetail from '../../components/chalet-detail.astro';
+import Footer from '../../components/footer.astro';
+
+import heroImage from '../../assets/images/chalets/bower-dusk.jpg';
+import bowerInterior1 from '../../assets/images/chalets/bower-interior-1.jpg';
+import bowerBathroom from '../../assets/images/chalets/bower-bathroom.jpg';
+import bowerBedroom from '../../assets/images/chalets/bower-bedroom.jpg';
+import bowerFerns from '../../assets/images/chalets/bower-ferns-teapot.jpg';
+import bowerNight from '../../assets/images/chalets/bower-night.jpg';
+import bowerFloorplan from '../../assets/images/chalets/bower-floorplan.jpg';
+---
+
+<BaseLayout
+  title="The Bower"
+  description="A couples retreat tucked away on 100 acres. One bedroom, spa bath opening to a private garden, and mountain views. Architect-designed timber chalet in the Bellinger Valley."
+>
+  <Navigation slot="header" transparent />
+
+  <ChaletDetail
+    name="The Bower"
+    tagline="Couples Retreat"
+    description="The Bower sits on the eastern edge of the property, deliberately apart from everything else. It's the romantic one — designed for two people who want to disappear from the world for a while. One queen bedroom, a large living area that opens through glass to the deck, and a spa bath that slides open to a private garden. You wake up to birdsong and mountain views. You go to sleep to the sound of wind in the trees and nothing else."
+    heroImage={heroImage}
+    heroAlt="The Bower chalet at dusk — warm amber light glows from within the timber-and-glass structure, a tall eucalypt silhouetted against the mountain sky"
+    galleryImages={[
+      { src: bowerNight, alt: 'The Bower at twilight, its architectural timber frame illuminated from within against the blue evening sky, garden and surrounding trees visible' },
+      { src: bowerBathroom, alt: 'Spa bath with timber floors and corrugated iron details, sliding glass doors open to a private fern garden' },
+      { src: bowerBedroom, alt: 'Queen bedroom with timber-lined walls and ceiling, natural light filtering through' },
+      { src: bowerFerns, alt: 'View through tree ferns to a table set with a teapot, mountains visible beyond the deck' },
+      { src: bowerInterior1, alt: 'The Bower living area — timber walls, natural light, comfortable furnishings' },
+    ]}
+    floorplan={bowerFloorplan}
+    bedrooms="1"
+    bathrooms="1"
+    guests="2"
+    position="Set apart on the eastern edge of the property — completely private, surrounded by native gardens. The most secluded chalet on the retreat."
+    features={[
+      'Queen bed with quality linen',
+      'Spa bath opening to private garden',
+      'Large living area with sliding glass doors to deck',
+      'Fully equipped kitchen — ceramic cooktop, oven, microwave, 210L fridge',
+      'Sun-drenched deck with mountain views',
+      'Electric BBQ',
+      'Reverse cycle air conditioning',
+      'Ceiling fans',
+      'Carport',
+      'Views of the Dorrigo escarpment',
+    ]}
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>

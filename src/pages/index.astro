@@ -1,0 +1,459 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+import Navigation from '../components/navigation.astro';
+import Hero from '../components/hero.astro';
+import ChaletCard from '../components/chalet-card.astro';
+import ImageShowcase from '../components/image-showcase.astro';
+import Testimonial from '../components/testimonial.astro';
+import FeatureStrip from '../components/feature-strip.astro';
+import Footer from '../components/footer.astro';
+
+// Hero — the misty morning shot. Sets the entire tone.
+import heroImage from '../assets/images/property/mist-morning.jpg';
+
+// Chalet images — exteriors that show the architecture against the mountains
+import bowerExterior from '../assets/images/chalets/bower-exterior.jpg';
+import ridgeExterior from '../assets/images/chalets/ridge-exterior.jpg';
+import tallowoodExterior from '../assets/images/chalets/tallowood-exterior.jpg';
+
+// Showcase images
+import stargazing from '../assets/images/property/stargazing.jpg';
+import interiorDeck from '../assets/images/property/interior-deck-mountains.jpg';
+import birdwatching from '../assets/images/property/birdwatching.jpg';
+import chaletsHillside from '../assets/images/property/chalets-hillside.jpg';
+
+// Property life
+import donkey from '../assets/images/facilities/donkey.jpg';
+import tennisNight from '../assets/images/facilities/tennis-night.jpg';
+---
+
+<BaseLayout
+  title="Promised Land Retreat"
+  description="Three architect-designed timber chalets on 100 acres beneath the Dorrigo escarpment. Crystal clear rivers, mountain views, and genuine country warmth in the Bellinger Valley, NSW."
+>
+  <Navigation slot="header" transparent />
+
+  <!-- ===== HERO ===== -->
+  <Hero
+    image={heroImage}
+    imageAlt="Early morning mist drifts through the eucalyptus trees of the Bellinger Valley, with a timber chalet visible on the hillside beyond"
+    title="Under the Mountains"
+    subtitle="Three timber chalets on 100 acres in the Bellinger Valley. No city lights. Just the wind in the trees."
+    cta={{ label: 'Book Your Stay', href: 'https://apac.littlehotelier.com/properties/promisedlanddirect' }}
+    overlay="gradient"
+    height="full"
+  />
+
+  <!-- ===== INTRO ===== -->
+  <section class="intro">
+    <div class="container">
+      <div class="intro__content fade-in">
+        <p class="lead">
+          Promised Land Retreat sits where the Dorrigo escarpment meets the valley floor — 100 acres of rolling green beneath one of Australia's most dramatic mountain backdrops. Three architect-designed timber chalets, each entirely private, each with views you'll remember for years.
+        </p>
+        <p class="intro__secondary">
+          Fifteen minutes from the creative village of Bellingen, half an hour from the coast, and a world away from everything else. This is the Bellinger Valley — where the Never Never River runs crystal clear over granite boulders, kookaburras call at dawn, and the only light at night comes from the stars.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STARGAZING SHOWCASE ===== -->
+  <ImageShowcase
+    image={stargazing}
+    alt="A couple silhouetted on the deck of their timber chalet under a vast canopy of stars, the architectural timber beams of the roof framing the night sky"
+    caption="No city lights in our skies at night — just the sound of the wind in the trees."
+    aspectRatio="cinematic"
+  />
+
+  <!-- ===== THE CHALETS ===== -->
+  <section class="chalets-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">The Accommodation</span>
+        <h2>Three Chalets, Three Worlds</h2>
+        <p class="lead">
+          Architect-designed from local timber. Spa baths, full kitchens, sun-drenched decks, and mountain views from every room. Each chalet is its own private retreat on the property.
+        </p>
+      </div>
+    </div>
+
+    <div class="container chalets-grid">
+      <ChaletCard
+        name="The Bower"
+        tagline="Couples"
+        description="Tucked away on the eastern edge of the property, by itself. One queen bedroom, a spa bath that opens to a private garden, and absolute quiet. The romantic one."
+        image={bowerExterior}
+        imageAlt="The Bower chalet — elegant timber architecture with a distinctive round window and gabled roof, nestled among native plantings"
+        bedrooms="1 Bedroom"
+        guests="2 Guests"
+        href="/chalets/the-bower/"
+      />
+
+      <ChaletCard
+        name="The Ridge"
+        tagline="Family"
+        description="Two bedrooms, a generous living space, and a wide deck overlooking the valley. Views of the Dorrigo escarpment that change with every shift of light and weather."
+        image={ridgeExterior}
+        imageAlt="The Ridge chalet at golden hour — warm timber cladding glowing in late afternoon light, the Dorrigo mountains rising behind"
+        bedrooms="2 Bedrooms"
+        guests="6 Guests"
+        href="/chalets/the-ridge/"
+        reverse
+      />
+
+      <ChaletCard
+        name="Tallowood"
+        tagline="Family"
+        description="Two bedrooms with a distinctive round window and lush gardens at the doorstep. Accessible design with separate shower. The mountains frame every window."
+        image={tallowoodExterior}
+        imageAlt="Tallowood chalet — architect-designed timber and glass set among mature gardens with the mountainous Dorrigo escarpment behind"
+        bedrooms="2 Bedrooms"
+        guests="6 Guests"
+        href="/chalets/tallowood/"
+      />
+    </div>
+  </section>
+
+  <!-- ===== INTERIOR SHOWCASE ===== -->
+  <ImageShowcase
+    image={interiorDeck}
+    alt="View from inside a timber-lined chalet through floor-to-ceiling glass doors to a sun-drenched deck and the Dorrigo mountains beyond"
+    caption="Every chalet is designed to bring the mountains inside."
+    aspectRatio="cinematic"
+  />
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="testimonial-section">
+    <div class="container">
+      <Testimonial
+        quote="There's a sense of calm that cascades over you, like the waterfalls the region is so well known for, the closer you get to the Promised Land Retreat."
+        author="Ben Direen"
+        context="Guest"
+      />
+    </div>
+  </section>
+
+  <!-- ===== PROPERTY LIFE ===== -->
+  <section class="property-life">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">100 Acres</span>
+        <h2>More Than a Place to Sleep</h2>
+      </div>
+    </div>
+
+    <FeatureStrip
+      image={donkey}
+      imageAlt="A friendly donkey on the property, looking directly at the camera with curiosity"
+      title="The Welcome Committee"
+      description="Fresh eggs from the chicken coop every morning. Fruit from the orchard. Honey from the hives. Friendly donkeys who'll come over to say hello. This is a working property that happens to have some of the best views in the valley."
+      imagePosition="left"
+    />
+
+    <FeatureStrip
+      image={tennisNight}
+      imageAlt="A floodlit tennis court under dramatic blue storm clouds with the Dorrigo escarpment silhouetted behind"
+      title="Things to Do (or Not)"
+      description="A full-size floodlit tennis court for night games under the stars. Mountain bikes for the Promised Land Loop. A games room with pool and ping-pong. Or just sit on the deck with a cup of tea and the binoculars — the Whip Birds, Kookaburras, and Cockatoos will keep you entertained."
+      imagePosition="right"
+    />
+
+    <FeatureStrip
+      image={birdwatching}
+      imageAlt="Binoculars and a well-worn field guide to Australian birds rest on a timber table, with a guest birdwatching from the deck in the background, mountains beyond"
+      title="The Never Never River"
+      description="A short walk from the property, the Never Never flows crystal clear over granite boulders through rainforest. Swimming holes with water so clean you can see metres to the bottom. Named by settlers who never wanted to leave — and you'll understand why."
+      imagePosition="left"
+    />
+  </section>
+
+  <!-- ===== HILLSIDE SHOWCASE ===== -->
+  <ImageShowcase
+    image={chaletsHillside}
+    alt="Two timber chalets nestled on a green hillside surrounded by tall eucalypts, with the dramatic Dorrigo escarpment and a vast sky above"
+    aspectRatio="cinematic"
+  />
+
+  <!-- ===== LOCATION TEASE ===== -->
+  <section class="location-tease">
+    <div class="container">
+      <div class="location-tease__content fade-in">
+        <span class="section-label">Bellinger Valley, NSW</span>
+        <h2>Where the Mountains Meet the River</h2>
+        <p class="lead">
+          Fifteen minutes from Bellingen — a creative village of art galleries, cafes, and monthly markets where the artisan scene rivals anywhere in the country. Forty minutes from the ancient Gondwana rainforests of Dorrigo National Park. Half an hour from unspoiled coastline. Halfway between Sydney and Brisbane, but a long way from both.
+        </p>
+        <div class="location-tease__distances">
+          <div class="location-tease__distance fade-in delay-1">
+            <span class="location-tease__time">15 min</span>
+            <span class="location-tease__place">Bellingen</span>
+          </div>
+          <div class="location-tease__distance fade-in delay-2">
+            <span class="location-tease__time">30 min</span>
+            <span class="location-tease__place">Coast</span>
+          </div>
+          <div class="location-tease__distance fade-in delay-3">
+            <span class="location-tease__time">40 min</span>
+            <span class="location-tease__place">Dorrigo Rainforest</span>
+          </div>
+          <div class="location-tease__distance fade-in delay-4">
+            <span class="location-tease__time">45 min</span>
+            <span class="location-tease__place">Coffs Harbour Airport</span>
+          </div>
+        </div>
+        <a href="/location/" class="btn btn-secondary">Explore the Area</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL TESTIMONIAL ===== -->
+  <section class="testimonial-section testimonial-section--warm">
+    <div class="container">
+      <Testimonial
+        quote="The pace of the place is so far removed from that of the city that you almost forget it exists. Concrete skyscrapers are replaced by hulking eucalyptus, hoop pines and gum trees."
+        author="Ben Direen"
+        context="Guest"
+      />
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta__content fade-in">
+        <h2>Come and Stay With Us</h2>
+        <p class="lead">
+          We'd love to have you. Book direct for the best rates — no platform fees, just a straight deal with us.
+        </p>
+        <div class="cta__buttons">
+          <a
+            href="https://apac.littlehotelier.com/properties/promisedlanddirect"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            Check Availability
+          </a>
+          <a href="/contact/" class="btn btn-secondary">
+            Give Us a Call
+          </a>
+        </div>
+        <p class="cta__phone">
+          Or call Sophie directly: <a href="tel:0494107195">0494 107 195</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  /* Intro */
+  .intro {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .intro {
+      padding: var(--space-3xl) 0 var(--space-2xl);
+    }
+  }
+
+  .intro__content {
+    max-width: 800px;
+  }
+
+  .intro__secondary {
+    color: var(--text-mid);
+    margin-top: var(--space-md);
+  }
+
+  /* Section headers */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header .lead {
+    max-width: 640px;
+  }
+
+  /* Chalets section */
+  .chalets-section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-lg);
+  }
+
+  .chalets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .chalets-grid {
+      gap: var(--space-3xl);
+    }
+  }
+
+  /* Testimonial sections */
+  .testimonial-section {
+    padding: var(--space-xl) 0;
+    background: var(--mist);
+  }
+
+  .testimonial-section--warm {
+    background: var(--mist-warm);
+  }
+
+  /* Property life */
+  .property-life {
+    padding-top: var(--space-2xl);
+    padding-bottom: 0;
+  }
+
+  .property-life .section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .property-life .section-header h2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Location tease */
+  .location-tease {
+    padding: var(--space-2xl) 0;
+    background: var(--green-deep);
+    color: var(--mist);
+  }
+
+  @media (min-width: 768px) {
+    .location-tease {
+      padding: var(--space-3xl) 0;
+    }
+  }
+
+  .location-tease__content {
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .location-tease .section-label {
+    color: var(--green-pale);
+  }
+
+  .location-tease h2 {
+    color: var(--mist);
+  }
+
+  .location-tease .lead {
+    color: rgba(247, 244, 239, 0.7);
+    margin: 0 auto var(--space-xl);
+  }
+
+  .location-tease__distances {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 640px) {
+    .location-tease__distances {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .location-tease__distance {
+    text-align: center;
+  }
+
+  .location-tease__time {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--amber-light);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .location-tease__place {
+    font-size: 0.85rem;
+    color: rgba(247, 244, 239, 0.55);
+    letter-spacing: 0.05em;
+  }
+
+  .location-tease .btn-secondary {
+    color: var(--mist);
+    border-color: rgba(247, 244, 239, 0.3);
+  }
+
+  .location-tease .btn-secondary:hover {
+    background: var(--mist);
+    color: var(--green-deep);
+    border-color: var(--mist);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: var(--space-2xl) 0;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      padding: var(--space-3xl) 0;
+    }
+  }
+
+  .cta__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta__content h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta__content .lead {
+    margin: 0 auto var(--space-xl);
+  }
+
+  .cta__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta__phone {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+
+  .cta__phone a {
+    color: var(--timber);
+    font-weight: 500;
+  }
+</style>

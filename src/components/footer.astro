@@ -1,0 +1,186 @@
+---
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__name">Promised Land Retreat</span>
+        <p class="footer__tagline">
+          Under the mountains, miles away from what ails you.
+        </p>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__heading">Stay With Us</h4>
+          <ul class="footer__list">
+            <li><a href="/chalets/">Our Chalets</a></li>
+            <li><a href="/property/">The Property</a></li>
+            <li><a href="/location/">Location</a></li>
+            <li>
+              <a
+                href="https://apac.littlehotelier.com/properties/promisedlanddirect"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Direct
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Get In Touch</h4>
+          <ul class="footer__list">
+            <li><a href="tel:0494107195">0494 107 195</a></li>
+            <li><a href="mailto:sophie@promisedlandretreat.com.au">Email Sophie</a></li>
+            <li>
+              <a
+                href="https://www.facebook.com/pages/Promised-Land-Retreat/130155923704489"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">Find Us</h4>
+          <address class="footer__address">
+            934 Promised Land Road<br />
+            Gleniffer, NSW 2454<br />
+            Australia
+          </address>
+          <p class="footer__distance">
+            15 min from Bellingen<br />
+            30 min from the coast
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; {new Date().getFullYear()} Promised Land Retreat.
+        Photography by Gethin Coles / Real Media.
+      </p>
+      <p class="footer__lp">
+        Featured in Lonely Planet Australia, 19th Edition.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--timber-deep);
+    color: rgba(247, 244, 239, 0.7);
+    padding: var(--space-2xl) 0 var(--space-lg);
+  }
+
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid rgba(247, 244, 239, 0.1);
+  }
+
+  @media (min-width: 768px) {
+    .footer__top {
+      grid-template-columns: 1.2fr 2fr;
+      gap: var(--space-3xl);
+    }
+  }
+
+  .footer__brand {
+    max-width: 320px;
+  }
+
+  .footer__name {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--mist);
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: rgba(247, 244, 239, 0.5);
+  }
+
+  .footer__columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .footer__heading {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber-light);
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__list {
+    list-style: none;
+  }
+
+  .footer__list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer__list a {
+    color: rgba(247, 244, 239, 0.65);
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+
+  .footer__list a:hover {
+    color: var(--mist);
+  }
+
+  .footer__address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__distance {
+    font-size: 0.85rem;
+    color: rgba(247, 244, 239, 0.45);
+    line-height: 1.5;
+  }
+
+  .footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-top: var(--space-lg);
+  }
+
+  .footer__copy,
+  .footer__lp {
+    font-size: 0.8rem;
+    color: rgba(247, 244, 239, 0.35);
+  }
+
+  .footer__lp {
+    font-style: italic;
+  }
+</style>

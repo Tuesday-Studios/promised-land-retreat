@@ -1,0 +1,127 @@
+---
+/**
+ * Asymmetric image gallery. Large hero image + supporting shots.
+ * Photos breathe. No cramped grids.
+ */
+import { Image } from 'astro:assets';
+
+interface GalleryImage {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+{images.length > 0 && (
+  <div class="gallery fade-in">
+    {images.map((img, i) => (
+      <div class:list={['gallery__item', `gallery__item--${i + 1}`]}>
+        <Image
+          src={img.src}
+          alt={img.alt}
+          widths={[400, 700, 1000, 1400]}
+          sizes={i === 0 ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 40vw, 50vw'}
+          class="gallery__image"
+          quality={80}
+        />
+      </div>
+    ))}
+  </div>
+)}
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--space-xs);
+  }
+
+  @media (min-width: 768px) {
+    .gallery {
+      gap: var(--space-sm);
+    }
+  }
+
+  /* First image — large, spans both columns */
+  .gallery__item--1 {
+    grid-column: 1 / -1;
+  }
+
+  .gallery__item--1 .gallery__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Remaining images in 2-col grid */
+  .gallery__item {
+    overflow: hidden;
+  }
+
+  .gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    transition: transform 1s var(--ease-out);
+  }
+
+  .gallery__item:hover .gallery__image {
+    transform: scale(1.03);
+  }
+
+  /* For 5+ images, make the 4th span wider */
+  .gallery__item--4 {
+    grid-column: 1 / -1;
+  }
+
+  .gallery__item--4 .gallery__image {
+    aspect-ratio: 21 / 9;
+  }
+
+  @media (min-width: 1024px) {
+    .gallery {
+      grid-template-columns: 1.2fr 1fr 1fr;
+    }
+
+    .gallery__item--1 {
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+    }
+
+    .gallery__item--1 .gallery__image {
+      aspect-ratio: auto;
+      height: 100%;
+    }
+
+    .gallery__item--2,
+    .gallery__item--3 {
+      grid-column: 3;
+    }
+
+    .gallery__item--2 .gallery__image,
+    .gallery__item--3 .gallery__image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery__item--4 {
+      grid-column: 1 / 2;
+    }
+
+    .gallery__item--4 .gallery__image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery__item--5 {
+      grid-column: 2 / 4;
+    }
+
+    .gallery__item--5 .gallery__image {
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>

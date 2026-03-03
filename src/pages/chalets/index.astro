@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import Navigation from '../../components/navigation.astro';
+import Hero from '../../components/hero.astro';
+import ChaletCard from '../../components/chalet-card.astro';
+import Footer from '../../components/footer.astro';
+
+import heroImage from '../../assets/images/property/living-deck-forest.jpg';
+import bowerExterior from '../../assets/images/chalets/bower-exterior.jpg';
+import ridgeExterior from '../../assets/images/chalets/ridge-exterior.jpg';
+import tallowoodExterior from '../../assets/images/chalets/tallowood-exterior.jpg';
+---
+
+<BaseLayout
+  title="Chalets"
+  description="Three architect-designed timber chalets — each self-contained with spa baths, full kitchens, and mountain views. Choose between a couples retreat or family accommodation."
+>
+  <Navigation slot="header" transparent />
+
+  <Hero
+    image={heroImage}
+    imageAlt="Looking from inside a timber-lined living area through floor-to-ceiling windows to a sun-drenched deck, eucalypts, and the Dorrigo mountains"
+    title="The Chalets"
+    subtitle="Three architect-designed retreats, each with its own character and its own view of the mountains."
+    overlay="gradient"
+    height="tall"
+  />
+
+  <section class="chalets-listing">
+    <div class="container">
+      <div class="intro fade-in">
+        <p class="lead">
+          Every chalet is crafted from timber, filled with natural light, and completely self-contained. Spa baths, full kitchens, sun-drenched decks, and views of the Dorrigo escarpment from every room. You won't need to leave unless you want to.
+        </p>
+        <div class="shared-features">
+          <h4>Every Chalet Includes</h4>
+          <ul>
+            <li>Architect-designed timber construction</li>
+            <li>Spa bath</li>
+            <li>Full kitchen with oven, ceramic cooktop & 210L fridge</li>
+            <li>Reverse cycle air conditioning & ceiling fans</li>
+            <li>Sun-drenched deck with electric BBQ</li>
+            <li>Queen beds with quality linen</li>
+            <li>Mountain views from every room</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="chalets-grid">
+        <ChaletCard
+          name="The Bower"
+          tagline="Couples Retreat"
+          description="Tucked away on the eastern edge of the property, entirely by itself. One queen bedroom, a spa bath with sliding doors to a private garden, and the kind of quiet you forgot existed. Elegant and simple — designed for two people who want the world to go away for a while."
+          image={bowerExterior}
+          imageAlt="The Bower chalet — elegant timber architecture with round window and gabled roof"
+          bedrooms="1 Bedroom"
+          guests="2 Guests"
+          href="/chalets/the-bower/"
+        />
+
+        <ChaletCard
+          name="The Ridge"
+          tagline="Family Chalet"
+          description="On the western end of the property with two bedrooms, a generous living space, and one of the best decks on the property. The golden hour light on the Dorrigo escarpment from this spot is something else entirely."
+          image={ridgeExterior}
+          imageAlt="The Ridge chalet at golden hour with the Dorrigo mountains rising behind"
+          bedrooms="2 Bedrooms"
+          guests="6 Guests"
+          href="/chalets/the-ridge/"
+          reverse
+        />
+
+        <ChaletCard
+          name="Tallowood"
+          tagline="Family Chalet"
+          description="Two bedrooms with a distinctive architectural character — that round window is an icon of the property. Lush gardens, accessible design with separate shower, and views from the kitchen that make cooking feel like a luxury."
+          image={tallowoodExterior}
+          imageAlt="Tallowood chalet set among lush gardens with the Dorrigo escarpment behind"
+          bedrooms="2 Bedrooms"
+          guests="6 Guests"
+          href="/chalets/tallowood/"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-cta">
+    <div class="container">
+      <div class="booking-cta__content fade-in">
+        <h2>Book Direct, Save More</h2>
+        <p>Skip the platform fees. When you book directly with us, you get the best rate and you're dealing with Sophie — not an algorithm.</p>
+        <a
+          href="https://apac.littlehotelier.com/properties/promisedlanddirect"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          Check Availability
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .chalets-listing {
+    padding: var(--space-2xl) 0;
+  }
+
+  .intro {
+    max-width: 740px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .intro {
+      margin-bottom: var(--space-3xl);
+    }
+  }
+
+  .shared-features {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background: var(--mist-warm);
+    border-left: 3px solid var(--amber);
+  }
+
+  .shared-features h4 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--timber);
+    margin-bottom: var(--space-sm);
+  }
+
+  .shared-features ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .shared-features ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .shared-features li {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .shared-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background: var(--amber);
+    border-radius: 50%;
+  }
+
+  .chalets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .chalets-grid {
+      gap: var(--space-3xl);
+    }
+  }
+
+  .booking-cta {
+    padding: var(--space-2xl) 0;
+    background: var(--timber-deep);
+    text-align: center;
+  }
+
+  .booking-cta__content {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .booking-cta h2 {
+    color: var(--mist);
+    margin-bottom: var(--space-sm);
+  }
+
+  .booking-cta p {
+    color: rgba(247, 244, 239, 0.7);
+    margin: 0 auto var(--space-lg);
+  }
+
+  .booking-cta .btn-primary {
+    background: var(--amber);
+    color: var(--timber-deep);
+  }
+
+  .booking-cta .btn-primary:hover {
+    background: var(--amber-light);
+    transform: translateY(-2px);
+  }
+</style>

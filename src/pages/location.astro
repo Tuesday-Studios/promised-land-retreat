@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+import Navigation from '../components/navigation.astro';
+import Hero from '../components/hero.astro';
+import Testimonial from '../components/testimonial.astro';
+import Footer from '../components/footer.astro';
+
+import heroImage from '../assets/images/chalets/tallowood-interior-mountain.jpg';
+---
+
+<BaseLayout
+  title="Location"
+  description="Promised Land Retreat is 15 minutes from Bellingen, 30 minutes from the coast, and 40 minutes from Dorrigo National Park. In the heart of the Bellinger Valley, NSW."
+>
+  <Navigation slot="header" transparent />
+
+  <Hero
+    image={heroImage}
+    imageAlt="View through the glass wall of a timber chalet — a pink sofa in the foreground, the deck beyond, and the sweeping Dorrigo escarpment filling the horizon"
+    title="The Bellinger Valley"
+    subtitle="Between the mountains and the sea. Close to everything, but a long way from the world."
+    overlay="gradient"
+    height="tall"
+  />
+
+  <!-- Intro -->
+  <section class="loc-intro">
+    <div class="container">
+      <div class="loc-intro__content fade-in">
+        <p class="lead">
+          The Bellinger Valley runs from the Dorrigo Plateau to the coast, a corridor of green between the Great Dividing Range and the Pacific. Promised Land Retreat sits at the head of the valley, where the escarpment is closest and the mountains are most dramatic. From here, you're 15 minutes from a village that punches well above its weight, half an hour from empty beaches, and 40 minutes from ancient Gondwana rainforest.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distances -->
+  <section class="distances">
+    <div class="container">
+      <div class="distances__grid">
+        <div class="distances__item fade-in delay-1">
+          <span class="distances__time">15 min</span>
+          <span class="distances__place">Bellingen</span>
+        </div>
+        <div class="distances__item fade-in delay-2">
+          <span class="distances__time">30 min</span>
+          <span class="distances__place">Coast</span>
+        </div>
+        <div class="distances__item fade-in delay-3">
+          <span class="distances__time">40 min</span>
+          <span class="distances__place">Dorrigo</span>
+        </div>
+        <div class="distances__item fade-in delay-4">
+          <span class="distances__time">45 min</span>
+          <span class="distances__place">Coffs Harbour Airport</span>
+        </div>
+        <div class="distances__item fade-in delay-5">
+          <span class="distances__time">30 min</span>
+          <span class="distances__place">Pacific Highway</span>
+        </div>
+      </div>
+      <p class="distances__note fade-in">Halfway between Sydney and Brisbane on the Pacific Highway.</p>
+    </div>
+  </section>
+
+  <!-- Bellingen -->
+  <section class="place-section">
+    <div class="container">
+      <div class="place-card fade-in">
+        <div class="place-card__header">
+          <span class="place-card__distance">15 minutes</span>
+          <h2 class="place-card__name">Bellingen</h2>
+        </div>
+        <div class="place-card__content">
+          <p class="place-card__intro">
+            Bellingen is one of those towns that people stumble across and then can't stop talking about. Population three thousand, give or take, but with a cultural life that rivals places ten times its size. It's been called "proto-Byron" — the arts, the cafes, the creative energy — but without the crowds or the price tag.
+          </p>
+          <div class="place-card__details">
+            <div class="place-card__detail">
+              <h4>The Town</h4>
+              <p>A turn-of-the-century main street lined with heritage buildings now filled with art galleries, independent shops, and cafes that take their coffee seriously. The Old Butter Factory is the creative hub — galleries, studios, and artisan workshops. The Federal Hotel anchors the social life.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Markets</h4>
+              <p>Every third Saturday, Bellingen Park fills with one of the coast's best community markets. Handmade everything — pottery, woodwork, jewellery, textiles — alongside local produce, street food, and live music. Get there early.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Festivals</h4>
+              <p>Bellingen punches ridiculously above its weight for festivals. The Winter Music Festival draws national acts. Camp Creative is an annual arts immersion. Add the Readers & Writers Festival, the River Festival, and regular concerts at the Memorial Hall, and there's something on most weekends.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Food</h4>
+              <p>For a small town, the food scene is remarkable. Cafe culture that rivals the inner city but with none of the pretension — think local produce, interesting cooking, and tables where you can actually have a conversation. The Gelato Bar is locally famous for a reason.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dorrigo -->
+  <section class="place-section place-section--alt">
+    <div class="container">
+      <div class="place-card fade-in">
+        <div class="place-card__header">
+          <span class="place-card__distance">40 minutes</span>
+          <h2 class="place-card__name">Dorrigo National Park</h2>
+        </div>
+        <div class="place-card__content">
+          <p class="place-card__intro">
+            Up the winding road to the Dorrigo Plateau and into World Heritage-listed Gondwana rainforest — some of the oldest surviving rainforest on Earth. The drive alone is worth it, climbing through the escarpment with views opening up behind you at every switchback.
+          </p>
+          <div class="place-card__details">
+            <div class="place-card__detail">
+              <h4>Griffith's Lookout</h4>
+              <p>The first stop, and it stops everyone. A sweeping view from the edge of the escarpment across the entire Bellinger Valley to the Pacific. On a clear day you can see the curve of the coast. On a misty morning, you're standing above the clouds.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Rainforest Walks</h4>
+              <p>Boardwalks through ancient Gondwana rainforest — Antarctic beech trees, massive strangler figs, tree ferns taller than a house. Crystal Shower Falls is the signature walk: a trail that takes you behind a waterfall through the rainforest canopy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coast -->
+  <section class="place-section">
+    <div class="container">
+      <div class="place-card fade-in">
+        <div class="place-card__header">
+          <span class="place-card__distance">30 minutes</span>
+          <h2 class="place-card__name">The Coast</h2>
+        </div>
+        <div class="place-card__content">
+          <p class="place-card__intro">
+            Head east and within half an hour you're at the coast. Not the overdeveloped, high-rise coast — the real one. Quiet estuaries, empty surf beaches, and small towns that haven't been swallowed by tourism yet.
+          </p>
+          <div class="place-card__details">
+            <div class="place-card__detail">
+              <h4>Urunga</h4>
+              <p>Where the Bellinger and Kalang rivers meet the sea. The Urunga boardwalk follows the estuary through coastal wetlands — a gentle walk that ends with ocean views. Bring the binoculars for the birdlife.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Beaches</h4>
+              <p>Hungry Head is a long stretch of sand that's often close to empty. Mylestom has a sheltered river lido perfect for kids. Sawtell has proper surf. None of them are crowded. All of them are beautiful.</p>
+            </div>
+            <div class="place-card__detail">
+              <h4>Coffs Harbour</h4>
+              <p>Forty-five minutes for the airport, Mutton Bird Island walk, and whale watching in season (June to November). The regional hub, but most guests prefer the quieter spots closer to the retreat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map / Directions -->
+  <section class="directions">
+    <div class="container">
+      <div class="directions__content fade-in">
+        <h2>Getting Here</h2>
+        <hr class="divider" />
+        <div class="directions__grid">
+          <div class="directions__method">
+            <h4>By Car</h4>
+            <p>From the Pacific Highway, take the Bellingen turnoff and follow signs through town. Continue northwest on Gleniffer Road, which becomes Promised Land Road. We're at number 934 — about 15 minutes from Bellingen, 30 minutes from the highway.</p>
+          </div>
+          <div class="directions__method">
+            <h4>By Air</h4>
+            <p>Coffs Harbour Airport is 45 minutes away, with regular flights from Sydney, Melbourne, and Brisbane. Car hire is available at the airport.</p>
+          </div>
+          <div class="directions__method">
+            <h4>The Address</h4>
+            <address>
+              934 Promised Land Road<br />
+              Gleniffer, NSW 2454<br />
+              Australia
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Testimonial
+    quote="As you turn into the property you're greeted by a corridor of towering platanus trees that usher you up the driveway."
+    author="Ben Direen"
+    context="Guest"
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .loc-intro {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .loc-intro__content {
+    max-width: 780px;
+  }
+
+  /* Distances */
+  .distances {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    text-align: center;
+  }
+
+  .distances__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-lg);
+  }
+
+  .distances__item {
+    text-align: center;
+  }
+
+  .distances__time {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--timber);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .distances__place {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .distances__note {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: none;
+  }
+
+  /* Place sections */
+  .place-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .place-section--alt {
+    background: var(--mist-warm);
+  }
+
+  .place-card__header {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--cloud);
+  }
+
+  .place-card__distance {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .place-card__intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: var(--space-xl);
+    max-width: 740px;
+  }
+
+  .place-card__details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .place-card__details {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .place-card__detail h4 {
+    color: var(--timber);
+    margin-bottom: 0.5rem;
+  }
+
+  .place-card__detail p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* Directions */
+  .directions {
+    padding: var(--space-2xl) 0;
+    background: var(--green-deep);
+  }
+
+  .directions__content h2 {
+    color: var(--mist);
+  }
+
+  .directions .divider {
+    background: rgba(247, 244, 239, 0.2);
+  }
+
+  .directions__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .directions__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .directions__method h4 {
+    color: var(--amber-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .directions__method p,
+  .directions__method address {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: rgba(247, 244, 239, 0.65);
+    line-height: 1.7;
+  }
+</style>

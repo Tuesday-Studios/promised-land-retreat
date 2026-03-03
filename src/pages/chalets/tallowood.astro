@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import Navigation from '../../components/navigation.astro';
+import ChaletDetail from '../../components/chalet-detail.astro';
+import Footer from '../../components/footer.astro';
+
+import heroImage from '../../assets/images/chalets/tallowood-exterior.jpg';
+import tallowoodInterior from '../../assets/images/chalets/tallowood-interior-mountain.jpg';
+import tallowoodKitchen from '../../assets/images/chalets/tallowood-kitchen.jpg';
+import tallowoodBedroom from '../../assets/images/chalets/tallowood-bedroom.jpg';
+import tallowoodBathroom from '../../assets/images/chalets/tallowood-bathroom.jpg';
+import tallowoodView from '../../assets/images/chalets/tallowood-view.jpg';
+import tallowoodFloorplan from '../../assets/images/chalets/tallowood-floorplan.jpg';
+---
+
+<BaseLayout
+  title="Tallowood"
+  description="A two-bedroom family chalet with accessible design, distinctive architecture, and mountain views from every room. Architect-designed timber retreat in the Bellinger Valley."
+>
+  <Navigation slot="header" transparent />
+
+  <ChaletDetail
+    name="Tallowood"
+    tagline="Family Chalet"
+    description="Tallowood has a character all its own. That distinctive round window in the gabled roof is an icon of the property — you'll see it from the driveway and know you've arrived somewhere with architectural intent. Two bedrooms, an accessible bathroom with separate shower, and a living area where the Dorrigo escarpment fills the glass from wall to wall. The kitchen view alone is worth the trip: you're cooking dinner while looking at one of the most dramatic mountain panoramas on the east coast. Lush gardens wrap around the entrance, and mature trees separate you from the neighbouring chalet."
+    heroImage={heroImage}
+    heroAlt="Tallowood chalet — architect-designed timber-and-glass structure with distinctive round window, surrounded by lush subtropical gardens with the Dorrigo escarpment rising behind"
+    galleryImages={[
+      { src: tallowoodInterior, alt: 'Living area with pink sofa and timber walls, floor-to-ceiling glass doors open to the deck and a sweeping view of the Dorrigo mountains' },
+      { src: tallowoodKitchen, alt: 'Fully equipped kitchen with timber finishes and mountain views through the window' },
+      { src: tallowoodBedroom, alt: 'Queen bedroom with timber-lined walls and natural light' },
+      { src: tallowoodBathroom, alt: 'Accessible bathroom with spa bath, separate shower, and natural light' },
+      { src: tallowoodView, alt: 'View from inside Tallowood looking through glass to the deck and the forested valley beyond' },
+    ]}
+    floorplan={tallowoodFloorplan}
+    bedrooms="2"
+    bathrooms="1"
+    guests="6"
+    position="Western end of the property alongside The Ridge, separated by mature trees. Accessible design throughout."
+    features={[
+      'Queen bed in main bedroom',
+      'Second bedroom — queen bed plus 2 singles',
+      'Spa bath with separate accessible shower',
+      'Large living area opening to deck',
+      'Fully equipped kitchen — ceramic cooktop, oven, microwave, 210L fridge',
+      'Sun-drenched deck with mountain views',
+      'Electric BBQ',
+      'Reverse cycle air conditioning',
+      'Ceiling fans',
+      'Accessible design',
+      'Views of the Dorrigo escarpment',
+    ]}
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>

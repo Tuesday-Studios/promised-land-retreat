@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/base-layout.astro';
+import Navigation from '../components/navigation.astro';
+import Footer from '../components/footer.astro';
+
+import heroImage from '../assets/images/chalets/bower-night.jpg';
+import Hero from '../components/hero.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Sophie at Promised Land Retreat. Call, email, or book direct for the best rates on accommodation in the Bellinger Valley."
+>
+  <Navigation slot="header" transparent />
+
+  <Hero
+    image={heroImage}
+    imageAlt="A timber chalet glowing warmly at twilight, its architectural frame illuminated against the deep blue evening sky"
+    title="Get in Touch"
+    subtitle="We'd love to have you come and stay. Give us a call if you have any questions."
+    overlay="gradient"
+    height="medium"
+  />
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <!-- Main contact info -->
+        <div class="contact__main fade-in">
+          <div class="contact__intro">
+            <p class="lead">
+              The simplest way to get in touch is to call or email Sophie. She runs the place, she knows the place, and she'll answer any questions you have about the chalets, the property, or what to do in the area.
+            </p>
+          </div>
+
+          <div class="contact__methods">
+            <div class="contact__method">
+              <h3>Phone</h3>
+              <a href="tel:0494107195" class="contact__phone">0494 107 195</a>
+              <p class="contact__note">Best for quick questions or last-minute availability.</p>
+            </div>
+
+            <div class="contact__method">
+              <h3>Email</h3>
+              <a href="mailto:sophie@promisedlandretreat.com.au" class="contact__email">
+                sophie@promisedlandretreat.com.au
+              </a>
+              <p class="contact__note">For booking enquiries, gift vouchers, or anything else.</p>
+            </div>
+          </div>
+
+          <div class="contact__social">
+            <h4>Find Us Online</h4>
+            <ul class="contact__social-list">
+              <li>
+                <a
+                  href="https://www.facebook.com/pages/Promised-Land-Retreat/130155923704489"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.tripadvisor.com.au/Hotel_Review-g488319-d293687-Reviews-Promised_Land_Cottages"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  TripAdvisor
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Booking sidebar -->
+        <aside class="contact__booking fade-in delay-2">
+          <div class="contact__booking-card">
+            <h3>Book Direct</h3>
+            <hr class="divider" />
+            <p>
+              When you book directly with us, you skip the platform fees and get the best rate. No middleman. Just you and Sophie.
+            </p>
+            <a
+              href="https://apac.littlehotelier.com/properties/promisedlanddirect"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary contact__book-btn"
+            >
+              Check Availability & Book
+            </a>
+            <p class="contact__lp">
+              Featured in Lonely Planet Australia, 19th Edition — selected purely on merit.
+            </p>
+          </div>
+
+          <div class="contact__address-card">
+            <h4>Find Us</h4>
+            <address>
+              934 Promised Land Road<br />
+              Gleniffer, NSW 2454<br />
+              Australia
+            </address>
+            <p class="contact__directions-note">
+              15 min from Bellingen<br />
+              30 min from the coast<br />
+              45 min from Coffs Harbour Airport
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sophie's video -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-content fade-in">
+        <h3>See the Retreat</h3>
+        <p>A short video tour of the property and the valley.</p>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/4swFiwo20rs"
+            title="Promised Land Retreat video tour"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<style>
+  .contact {
+    padding: var(--space-2xl) 0;
+  }
+
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .contact__grid {
+      grid-template-columns: 1.3fr 1fr;
+    }
+  }
+
+  .contact__intro {
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact__intro .lead {
+    max-width: none;
+  }
+
+  .contact__methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact__method h3 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact__phone {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--timber);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact__phone:hover {
+    color: var(--amber);
+  }
+
+  .contact__email {
+    font-size: 1.1rem;
+    color: var(--timber);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact__email:hover {
+    color: var(--amber);
+  }
+
+  .contact__note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+
+  .contact__social {
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--cloud);
+  }
+
+  .contact__social h4 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__social-list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .contact__social-list a {
+    font-size: 0.95rem;
+    color: var(--timber);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .contact__social-list a:hover {
+    color: var(--amber);
+  }
+
+  /* Booking sidebar */
+  .contact__booking {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+
+  .contact__booking-card {
+    padding: var(--space-xl);
+    background: var(--timber-deep);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__booking-card h3 {
+    color: var(--mist);
+    margin-bottom: 0;
+  }
+
+  .contact__booking-card .divider {
+    background: rgba(247, 244, 239, 0.2);
+  }
+
+  .contact__booking-card p {
+    color: rgba(247, 244, 239, 0.65);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__book-btn {
+    width: 100%;
+    text-align: center;
+    background: var(--amber);
+    color: var(--timber-deep);
+  }
+
+  .contact__book-btn:hover {
+    background: var(--amber-light);
+  }
+
+  .contact__lp {
+    font-style: italic;
+    font-size: 0.8rem !important;
+    color: rgba(247, 244, 239, 0.4) !important;
+    margin-bottom: 0 !important;
+    margin-top: var(--space-md);
+  }
+
+  .contact__address-card {
+    padding: var(--space-lg);
+    background: var(--mist-warm);
+  }
+
+  .contact__address-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__address-card address {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact__directions-note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* Video */
+  .video-section {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: var(--mist-warm);
+  }
+
+  .video-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .video-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .video-content > p {
+    color: var(--text-mid);
+    margin: 0 auto var(--space-lg);
+  }
+
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>

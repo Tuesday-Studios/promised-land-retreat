@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import Navigation from '../../components/navigation.astro';
+import ChaletDetail from '../../components/chalet-detail.astro';
+import Footer from '../../components/footer.astro';
+
+import heroImage from '../../assets/images/chalets/ridge-exterior.jpg';
+import ridgeDeck from '../../assets/images/chalets/ridge-deck-dining.jpg';
+import ridgeLounge from '../../assets/images/chalets/ridge-lounge.jpg';
+import ridgeBedroom from '../../assets/images/chalets/ridge-bedroom.jpg';
+import ridgeBathroom from '../../assets/images/chalets/ridge-bathroom.jpg';
+import ridgeInterior from '../../assets/images/chalets/ridge-interior-1.jpg';
+import ridgeFloorplan from '../../assets/images/chalets/ridge-floorplan.jpg';
+---
+
+<BaseLayout
+  title="The Ridge"
+  description="A two-bedroom family chalet on 100 acres with views of the Dorrigo escarpment. Spa bath, full kitchen, and a deck where the golden hour light is extraordinary."
+>
+  <Navigation slot="header" transparent />
+
+  <ChaletDetail
+    name="The Ridge"
+    tagline="Family Chalet"
+    description="The Ridge sits on the western end of the property with the kind of view that stops conversations. Two bedrooms — a queen and a second room with a queen and two singles — a generous living area, and a wide deck that faces the Dorrigo escarpment. The golden hour from this spot is extraordinary: the late afternoon sun catches the mountain face and the whole landscape shifts from green to amber to deep purple. A spa bath, a full kitchen, and enough space for a family to spread out without tripping over each other."
+    heroImage={heroImage}
+    heroAlt="The Ridge chalet at golden hour — warm timber cladding glowing in late afternoon light, the dramatic Dorrigo escarpment rising behind through native trees"
+    galleryImages={[
+      { src: ridgeDeck, alt: 'Outdoor dining table on the timber deck looking through into the open living area, mountains visible beyond' },
+      { src: ridgeLounge, alt: 'Spacious lounge area with comfortable seating, timber walls and ceiling, natural light from large windows' },
+      { src: ridgeBedroom, alt: 'Queen bedroom with timber-lined walls, soft natural light' },
+      { src: ridgeBathroom, alt: 'Bathroom with spa bath, timber floors and natural light' },
+      { src: ridgeInterior, alt: 'Interior view showing the open-plan living and dining space with mountain views through glass' },
+    ]}
+    floorplan={ridgeFloorplan}
+    bedrooms="2"
+    bathrooms="1"
+    guests="6"
+    position="Western end of the property, separated from Tallowood by mature trees. Entirely private with uninterrupted views of the escarpment."
+    features={[
+      'Queen bed in main bedroom',
+      'Second bedroom — queen bed plus 2 singles',
+      'Spa bath',
+      'Large living area opening to deck',
+      'Fully equipped kitchen — ceramic cooktop, oven, microwave, 210L fridge',
+      'Sun-drenched deck with mountain views',
+      'Electric BBQ',
+      'Reverse cycle air conditioning',
+      'Ceiling fans',
+      'Views of the Dorrigo escarpment',
+    ]}
+  />
+
+  <Footer slot="footer" />
+</BaseLayout>
