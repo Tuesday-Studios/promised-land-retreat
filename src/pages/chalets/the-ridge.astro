@@ -1,55 +1,172 @@
 ---
-import BaseLayout from '../../layouts/base-layout.astro';
-import Navigation from '../../components/navigation.astro';
-import ChaletDetail from '../../components/chalet-detail.astro';
-import Footer from '../../components/footer.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
 
-import heroImage from '../../assets/images/chalets/ridge-exterior.jpg';
-import ridgeDeck from '../../assets/images/chalets/ridge-deck-dining.jpg';
-import ridgeLounge from '../../assets/images/chalets/ridge-lounge.jpg';
-import ridgeBedroom from '../../assets/images/chalets/ridge-bedroom.jpg';
-import ridgeBathroom from '../../assets/images/chalets/ridge-bathroom.jpg';
-import ridgeInterior from '../../assets/images/chalets/ridge-interior-1.jpg';
-import ridgeFloorplan from '../../assets/images/chalets/ridge-floorplan.jpg';
+import heroImage from '@/assets/PLR_9625-2.jpg'
+import deckDining from '@/assets/5300promised_0053.jpg'
+import lounge from '@/assets/promised_9375.jpg'
+import bedroom1 from '@/assets/promised_9539.jpg'
+import bedroom2 from '@/assets/promised_9532.jpg'
+import bathroom from '@/assets/promised_9531.jpg'
+import interior1 from '@/assets/PLR_9741.jpg'
+import interior2 from '@/assets/PLR_9685.jpg'
+import umbrella from '@/assets/Cottage_with_umbrella.jpg'
+import surrounds from '@/assets/Ken_Spence-36_copy.jpg'
+import floorplan from '@/assets/The-Ridge.jpg'
+import ctaImage from '@/assets/Ken_Spence-34.jpg'
 ---
 
 <BaseLayout
-  title="The Ridge"
-  description="A two-bedroom family chalet on 100 acres with views of the Dorrigo escarpment. Spa bath, full kitchen, and a deck where the golden hour light is extraordinary."
+  title="The Ridge — Family Chalet | Promised Land Retreat"
+  description="The Ridge is a two-bedroom family chalet at the western end of the property. Spa bath, full kitchen, mountain views. Sleeps up to six. Book direct for the best rate."
+  transparentHeader
 >
-  <Navigation slot="header" transparent />
 
-  <ChaletDetail
-    name="The Ridge"
-    tagline="Family Chalet"
-    description="The Ridge sits on the western end of the property with the kind of view that stops conversations. Two bedrooms — a queen and a second room with a queen and two singles — a generous living area, and a wide deck that faces the Dorrigo escarpment. The golden hour from this spot is extraordinary: the late afternoon sun catches the mountain face and the whole landscape shifts from green to amber to deep purple. A spa bath, a full kitchen, and enough space for a family to spread out without tripping over each other."
-    heroImage={heroImage}
-    heroAlt="The Ridge chalet at golden hour — warm timber cladding glowing in late afternoon light, the dramatic Dorrigo escarpment rising behind through native trees"
-    galleryImages={[
-      { src: ridgeDeck, alt: 'Outdoor dining table on the timber deck looking through into the open living area, mountains visible beyond' },
-      { src: ridgeLounge, alt: 'Spacious lounge area with comfortable seating, timber walls and ceiling, natural light from large windows' },
-      { src: ridgeBedroom, alt: 'Queen bedroom with timber-lined walls, soft natural light' },
-      { src: ridgeBathroom, alt: 'Bathroom with spa bath, timber floors and natural light' },
-      { src: ridgeInterior, alt: 'Interior view showing the open-plan living and dining space with mountain views through glass' },
-    ]}
-    floorplan={ridgeFloorplan}
-    bedrooms="2"
-    bathrooms="1"
-    guests="6"
-    position="Western end of the property, separated from Tallowood by mature trees. Entirely private with uninterrupted views of the escarpment."
-    features={[
-      'Queen bed in main bedroom',
-      'Second bedroom — queen bed plus 2 singles',
-      'Spa bath',
-      'Large living area opening to deck',
-      'Fully equipped kitchen — ceramic cooktop, oven, microwave, 210L fridge',
-      'Sun-drenched deck with mountain views',
-      'Electric BBQ',
-      'Reverse cycle air conditioning',
-      'Ceiling fans',
-      'Views of the Dorrigo escarpment',
-    ]}
-  />
+  <section class="hero" aria-label="The Ridge">
+    <Image src={heroImage} alt="The Ridge chalet at golden hour — the Dorrigo escarpment glowing amber behind timber architecture" class="hero__bg" widths={[800, 1200, 1600, 2000]} sizes="100vw" loading="eager" />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <span class="hero__tag">Family Chalet</span>
+      <h1>The Ridge</h1>
+      <p class="lead">Two bedrooms. Room for the whole family. Mountain views from every window, and an entire end of the property to yourselves.</p>
+      <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--amber" target="_blank" rel="noopener">Book The Ridge</a>
+    </div>
+  </section>
 
-  <Footer slot="footer" />
+  <section class="detail section--parchment" aria-label="About The Ridge">
+    <div class="detail__grid">
+      <div class="detail__text">
+        <h2>Space to spread out</h2>
+        <p>The Ridge sits at the western end of the property, separated from Tallowood by mature trees, entirely private. It's the chalet for families, for two couples travelling together, for anyone who wants a bit more room.</p>
+        <p>Two bedrooms — one with a queen bed, the other with a queen and two singles — give you flexibility. The spa bath is deep and indulgent. The living area is generous, all warm timber and natural light, leading through sliding glass doors to a deck that faces the Dorrigo escarpment.</p>
+        <p>The kitchen is fully equipped: ceramic cooktop, full oven, microwave, a proper fridge. Help yourself to eggs from the coop and herbs from the garden. The electric BBQ on the deck is ready for evening meals with the mountains as backdrop.</p>
+      </div>
+      <div class="detail__images">
+        <div class="img-frame detail__img-tall">
+          <Image src={deckDining} alt="Outdoor dining on The Ridge deck — table set for dinner looking through to warm interior" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 45vw" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery section--linen" aria-label="The Ridge gallery">
+    <div class="gallery__inner">
+      <h2>Gallery</h2>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide img-frame">
+          <Image src={umbrella} alt="The Ridge with sun umbrella — contemporary timber architecture on green hillside" widths={[600, 900, 1200]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={lounge} alt="The Ridge lounge — comfortable seating, timber ceiling, natural light" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={bedroom1} alt="The Ridge master bedroom — queen bed, timber walls, soft light" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={bedroom2} alt="The Ridge second bedroom — queen bed and two single beds" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={bathroom} alt="The Ridge bathroom — spa bath, clean lines, natural timber" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item gallery__item--wide img-frame">
+          <Image src={surrounds} alt="The Ridge and its surrounds — property stretching toward the escarpment" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="floorplan section--parchment" aria-label="Floor plan">
+    <div class="floorplan__inner">
+      <h2>Floor Plan</h2>
+      <div class="floorplan__image">
+        <Image src={floorplan} alt="The Ridge floor plan — two bedrooms, bathroom, open living area, deck" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="specs section--linen" aria-label="The Ridge specifications">
+    <div class="specs__inner">
+      <div class="specs__grid">
+        <div class="spec-group">
+          <h3>Sleeping</h3>
+          <ul><li>Bedroom 1: queen bed</li><li>Bedroom 2: queen + 2 singles</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Bathroom</h3>
+          <ul><li>Spa bath</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Kitchen</h3>
+          <ul><li>Ceramic cooktop</li><li>Full oven</li><li>Microwave</li><li>210L fridge</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Living</h3>
+          <ul><li>Large living area</li><li>Reverse-cycle A/C</li><li>Ceiling fan</li><li>Sliding glass doors to deck</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Outdoors</h3>
+          <ul><li>Sun-drenched deck</li><li>Electric BBQ</li><li>Mountain views</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Character</h3>
+          <ul><li>Western end of property</li><li>Complete privacy</li><li>Ideal for families</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-label="Book The Ridge">
+    <Image src={ctaImage} alt="Couple on a chalet deck beneath stars" class="cta__bg" widths={[800, 1200, 1600]} sizes="100vw" loading="lazy" />
+    <div class="cta__overlay" aria-hidden="true"></div>
+    <div class="cta__content">
+      <h2>Book The Ridge</h2>
+      <p>Direct booking — no middleman, no extra fees. Or call Sophie to ask about anything at all.</p>
+      <div class="cta__actions">
+        <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--amber" target="_blank" rel="noopener">Check Availability</a>
+        <a href="tel:0494107195" class="btn btn--ghost-light">Call 0494 107 195</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  /* Hero — page-specific overrides */
+  .hero { min-height: 70vh; }
+  .hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero__content { position: relative; z-index: 2; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 4rem; width: 100%; color: var(--color-mist); }
+  .hero__tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-amber); display: block; margin-bottom: 0.75rem; }
+  .hero h1 { margin-bottom: 1rem; }
+  .hero .lead { margin-bottom: 2rem; }
+
+  .detail { padding: clamp(4rem,8vw,7rem) 1.5rem; }
+  .detail__grid { max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+  @media (min-width: 900px) { .detail__grid { grid-template-columns: 3fr 2fr; gap: 5rem; } }
+  .detail__text h2 { margin-bottom: 1.25rem; }
+  .detail__text p { color: var(--color-escarpment); margin-bottom: 1rem; }
+  .detail__img-tall { aspect-ratio: 3/4; }
+  .detail__img-tall img { width: 100%; height: 100%; object-fit: cover; }
+
+  .gallery { padding: clamp(4rem,8vw,7rem) 1.5rem; }
+  .gallery__inner { max-width: 72rem; margin: 0 auto; }
+  .gallery__inner h2 { margin-bottom: 2rem; }
+  .gallery__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .gallery__item { aspect-ratio: 4/3; }
+  .gallery__item--wide { grid-column: span 2; aspect-ratio: 21/9; }
+  @media (max-width: 600px) { .gallery__grid { grid-template-columns: 1fr; } .gallery__item--wide { grid-column: span 1; aspect-ratio: 16/9; } }
+
+  .floorplan { padding: clamp(3rem,6vw,5rem) 1.5rem; }
+  .floorplan__inner { max-width: 48rem; margin: 0 auto; text-align: center; }
+  .floorplan__inner h2 { margin-bottom: 2rem; }
+  .floorplan__image img { width: 100%; height: auto; }
+
+  .specs { padding: clamp(3rem,6vw,5rem) 1.5rem; }
+  .specs__inner { max-width: 72rem; margin: 0 auto; }
+  .specs__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; }
+  .spec-group h3 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-timber); }
+  .spec-group ul { list-style: none; padding: 0; }
+  .spec-group li { font-size: 0.9rem; color: var(--color-escarpment); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+
+  /* CTA — page-specific min-height override */
+  .cta { min-height: 50vh; }
+</style>

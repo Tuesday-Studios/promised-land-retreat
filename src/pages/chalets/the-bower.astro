@@ -1,55 +1,176 @@
 ---
-import BaseLayout from '../../layouts/base-layout.astro';
-import Navigation from '../../components/navigation.astro';
-import ChaletDetail from '../../components/chalet-detail.astro';
-import Footer from '../../components/footer.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
 
-import heroImage from '../../assets/images/chalets/bower-dusk.jpg';
-import bowerInterior1 from '../../assets/images/chalets/bower-interior-1.jpg';
-import bowerBathroom from '../../assets/images/chalets/bower-bathroom.jpg';
-import bowerBedroom from '../../assets/images/chalets/bower-bedroom.jpg';
-import bowerFerns from '../../assets/images/chalets/bower-ferns-teapot.jpg';
-import bowerNight from '../../assets/images/chalets/bower-night.jpg';
-import bowerFloorplan from '../../assets/images/chalets/bower-floorplan.jpg';
+import heroImage from '@/assets/PLR_9769.jpg'
+import exterior from '@/assets/promised_9682-2.jpg'
+import bathroom from '@/assets/promised_9597.jpg'
+import bedroom from '@/assets/promised_9361.jpg'
+import interior1 from '@/assets/promised_9654.jpg'
+import interior2 from '@/assets/promised_9637.jpg'
+import teapot from '@/assets/promised_9622_01.jpg'
+import nightBack from '@/assets/back_couples_cottage_by_night_copy.jpg'
+import floorplan from '@/assets/The-Bower.jpg'
+import ctaImage from '@/assets/Couples_Cottage_by_night.jpg'
 ---
 
 <BaseLayout
-  title="The Bower"
-  description="A couples retreat tucked away on 100 acres. One bedroom, spa bath opening to a private garden, and mountain views. Architect-designed timber chalet in the Bellinger Valley."
+  title="The Bower — Couples Retreat | Promised Land Retreat"
+  description="The Bower is a one-bedroom romantic retreat at the eastern edge of the property. Spa bath opening to a private garden, sun-drenched deck, mountain views. Book direct."
+  transparentHeader
 >
-  <Navigation slot="header" transparent />
 
-  <ChaletDetail
-    name="The Bower"
-    tagline="Couples Retreat"
-    description="The Bower sits on the eastern edge of the property, deliberately apart from everything else. It's the romantic one — designed for two people who want to disappear from the world for a while. One queen bedroom, a large living area that opens through glass to the deck, and a spa bath that slides open to a private garden. You wake up to birdsong and mountain views. You go to sleep to the sound of wind in the trees and nothing else."
-    heroImage={heroImage}
-    heroAlt="The Bower chalet at dusk — warm amber light glows from within the timber-and-glass structure, a tall eucalypt silhouetted against the mountain sky"
-    galleryImages={[
-      { src: bowerNight, alt: 'The Bower at twilight, its architectural timber frame illuminated from within against the blue evening sky, garden and surrounding trees visible' },
-      { src: bowerBathroom, alt: 'Spa bath with timber floors and corrugated iron details, sliding glass doors open to a private fern garden' },
-      { src: bowerBedroom, alt: 'Queen bedroom with timber-lined walls and ceiling, natural light filtering through' },
-      { src: bowerFerns, alt: 'View through tree ferns to a table set with a teapot, mountains visible beyond the deck' },
-      { src: bowerInterior1, alt: 'The Bower living area — timber walls, natural light, comfortable furnishings' },
-    ]}
-    floorplan={bowerFloorplan}
-    bedrooms="1"
-    bathrooms="1"
-    guests="2"
-    position="Set apart on the eastern edge of the property — completely private, surrounded by native gardens. The most secluded chalet on the retreat."
-    features={[
-      'Queen bed with quality linen',
-      'Spa bath opening to private garden',
-      'Large living area with sliding glass doors to deck',
-      'Fully equipped kitchen — ceramic cooktop, oven, microwave, 210L fridge',
-      'Sun-drenched deck with mountain views',
-      'Electric BBQ',
-      'Reverse cycle air conditioning',
-      'Ceiling fans',
-      'Carport',
-      'Views of the Dorrigo escarpment',
-    ]}
-  />
+  <!-- Hero -->
+  <section class="hero" aria-label="The Bower">
+    <Image src={heroImage} alt="The Bower chalet glowing warmly at night, warm light spilling from timber-framed windows" class="hero__bg" widths={[800, 1200, 1600, 2000]} sizes="100vw" loading="eager" />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <span class="hero__tag">Couples Retreat</span>
+      <h1>The Bower</h1>
+      <p class="lead">Elegant and simple. One bedroom. A spa bath that opens onto a private garden. Tucked at the eastern edge of the property, entirely on its own.</p>
+      <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--amber" target="_blank" rel="noopener">Book The Bower</a>
+    </div>
+  </section>
 
-  <Footer slot="footer" />
+  <!-- Description -->
+  <section class="detail section--parchment" aria-label="About The Bower">
+    <div class="detail__grid">
+      <div class="detail__text">
+        <h2>Your own private corner</h2>
+        <p>The Bower sits apart from the other chalets, at the eastern edge of the property where the gardens give way to open farmland. It was designed for two people who want to slow down — a weekend with no agenda beyond the view from the deck, a long soak in the spa, and whatever's in the kitchen.</p>
+        <p>The bathroom is the signature: a deep spa bath with sliding doors that open directly onto a private walled garden. In the evening, you can soak under the stars without another soul around. The bedroom faces the mountains. The living area is generous, warm with timber, and leads through glass doors to the deck and its electric BBQ.</p>
+        <p>The kitchen is properly equipped — ceramic cooktop, full oven, microwave, a 210-litre fridge — because we believe a holiday kitchen should be one you actually want to cook in. Help yourself to eggs from the coop on the way back from a morning walk.</p>
+      </div>
+      <div class="detail__images">
+        <div class="img-frame detail__img-tall">
+          <Image src={bathroom} alt="The Bower spa bath — sliding doors open onto a private garden with ferns and dappled light" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 45vw" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery section--linen" aria-label="The Bower gallery">
+    <div class="gallery__inner">
+      <h2>Gallery</h2>
+      <div class="gallery__grid">
+        <div class="gallery__item gallery__item--wide img-frame">
+          <Image src={exterior} alt="The Bower exterior — timber cladding, gabled roof with round window, garden surrounds" widths={[600, 900, 1200]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={bedroom} alt="The Bower bedroom — queen bed with crisp linen, warm timber walls" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={interior1} alt="The Bower interior — living space with natural light and timber detailing" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={teapot} alt="View through ferns — teapot on table with mountain vista beyond" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item img-frame">
+          <Image src={interior2} alt="The Bower interior details — warm timber, afternoon light" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 30vw" loading="lazy" />
+        </div>
+        <div class="gallery__item gallery__item--wide img-frame">
+          <Image src={nightBack} alt="The Bower from behind at night — warm glow through windows against dark bush" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floor plan -->
+  <section class="floorplan section--parchment" aria-label="Floor plan">
+    <div class="floorplan__inner">
+      <h2>Floor Plan</h2>
+      <div class="floorplan__image">
+        <Image src={floorplan} alt="The Bower floor plan — one bedroom, bathroom, open living area, deck" widths={[600, 900]} sizes="(max-width: 768px) 90vw, 60vw" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="specs section--linen" aria-label="The Bower specifications">
+    <div class="specs__inner">
+      <div class="specs__grid">
+        <div class="spec-group">
+          <h3>Sleeping</h3>
+          <ul><li>1 queen bedroom</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Bathroom</h3>
+          <ul><li>Spa bath with sliding doors to private garden</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Kitchen</h3>
+          <ul><li>Ceramic cooktop</li><li>Full oven</li><li>Microwave</li><li>210L fridge</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Living</h3>
+          <ul><li>Large living area</li><li>Reverse-cycle A/C</li><li>Ceiling fan</li><li>Sliding glass doors to deck</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Outdoors</h3>
+          <ul><li>Sun-drenched deck</li><li>Electric BBQ</li><li>Carport</li><li>Mountain views</li></ul>
+        </div>
+        <div class="spec-group">
+          <h3>Character</h3>
+          <ul><li>Eastern edge of property</li><li>Complete privacy</li><li>Garden setting</li><li>Romantic retreat</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-label="Book The Bower">
+    <Image src={ctaImage} alt="The Bower at dusk, glowing warmly with a gum tree silhouetted against the sky" class="cta__bg" widths={[800, 1200, 1600]} sizes="100vw" loading="lazy" />
+    <div class="cta__overlay" aria-hidden="true"></div>
+    <div class="cta__content">
+      <h2>Book The Bower</h2>
+      <p>Direct booking — no middleman, no extra fees. Or call Sophie to ask about anything at all.</p>
+      <div class="cta__actions">
+        <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--amber" target="_blank" rel="noopener">Check Availability</a>
+        <a href="tel:0494107195" class="btn btn--ghost-light">Call 0494 107 195</a>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
+
+<style>
+  /* Hero — page-specific overrides */
+  .hero { min-height: 70vh; }
+  .hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero__content { position: relative; z-index: 2; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 4rem; width: 100%; color: var(--color-mist); }
+  .hero__tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-amber); display: block; margin-bottom: 0.75rem; }
+  .hero h1 { margin-bottom: 1rem; }
+  .hero .lead { margin-bottom: 2rem; }
+
+  .detail { padding: clamp(4rem,8vw,7rem) 1.5rem; }
+  .detail__grid { max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+  @media (min-width: 900px) { .detail__grid { grid-template-columns: 3fr 2fr; gap: 5rem; } }
+  .detail__text h2 { margin-bottom: 1.25rem; }
+  .detail__text p { color: var(--color-escarpment); margin-bottom: 1rem; }
+  .detail__img-tall { aspect-ratio: 3/4; }
+  .detail__img-tall img { width: 100%; height: 100%; object-fit: cover; }
+
+  .gallery { padding: clamp(4rem,8vw,7rem) 1.5rem; }
+  .gallery__inner { max-width: 72rem; margin: 0 auto; }
+  .gallery__inner h2 { margin-bottom: 2rem; }
+  .gallery__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .gallery__item { aspect-ratio: 4/3; }
+  .gallery__item--wide { grid-column: span 2; aspect-ratio: 21/9; }
+  @media (max-width: 600px) { .gallery__grid { grid-template-columns: 1fr; } .gallery__item--wide { grid-column: span 1; aspect-ratio: 16/9; } }
+
+  .floorplan { padding: clamp(3rem,6vw,5rem) 1.5rem; }
+  .floorplan__inner { max-width: 48rem; margin: 0 auto; text-align: center; }
+  .floorplan__inner h2 { margin-bottom: 2rem; }
+  .floorplan__image img { width: 100%; height: auto; }
+
+  .specs { padding: clamp(3rem,6vw,5rem) 1.5rem; }
+  .specs__inner { max-width: 72rem; margin: 0 auto; }
+  .specs__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; }
+  .spec-group h3 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--color-timber); }
+  .spec-group ul { list-style: none; padding: 0; }
+  .spec-group li { font-size: 0.9rem; color: var(--color-escarpment); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+
+  /* CTA — page-specific min-height override */
+  .cta { min-height: 50vh; }
+</style>

@@ -1,213 +1,281 @@
 ---
-import BaseLayout from '../../layouts/base-layout.astro';
-import Navigation from '../../components/navigation.astro';
-import Hero from '../../components/hero.astro';
-import ChaletCard from '../../components/chalet-card.astro';
-import Footer from '../../components/footer.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
 
-import heroImage from '../../assets/images/property/living-deck-forest.jpg';
-import bowerExterior from '../../assets/images/chalets/bower-exterior.jpg';
-import ridgeExterior from '../../assets/images/chalets/ridge-exterior.jpg';
-import tallowoodExterior from '../../assets/images/chalets/tallowood-exterior.jpg';
+import heroImage from '@/assets/promised_9661-2.jpg'
+import bowerExt from '@/assets/promised_9682-2.jpg'
+import bowerInt from '@/assets/promised_9654.jpg'
+import ridgeExt from '@/assets/PLR_9625-2.jpg'
+import ridgeInt from '@/assets/promised_9375.jpg'
+import tallowoodExt from '@/assets/promised_9722.jpg'
+import tallowoodInt from '@/assets/promised_9345a.jpg'
+import showcaseImage from '@/assets/promised_9369_01.jpg'
 ---
 
 <BaseLayout
-  title="Chalets"
-  description="Three architect-designed timber chalets — each self-contained with spa baths, full kitchens, and mountain views. Choose between a couples retreat or family accommodation."
+  title="Our Chalets — Promised Land Retreat"
+  description="Three architect-designed timber chalets on 100 acres. The Bower for couples, The Ridge and Tallowood for families. Spa baths, full kitchens, mountain views from every deck."
+  transparentHeader
 >
-  <Navigation slot="header" transparent />
 
-  <Hero
-    image={heroImage}
-    imageAlt="Looking from inside a timber-lined living area through floor-to-ceiling windows to a sun-drenched deck, eucalypts, and the Dorrigo mountains"
-    title="The Chalets"
-    subtitle="Three architect-designed retreats, each with its own character and its own view of the mountains."
-    overlay="gradient"
-    height="tall"
-  />
+  <!-- Hero -->
+  <section class="hero" aria-label="Our Chalets">
+    <Image
+      src={heroImage}
+      alt="Two timber chalets set on green hillside beneath the Dorrigo escarpment, clouds drifting above"
+      class="hero__bg"
+      widths={[800, 1200, 1600, 2000]}
+      sizes="100vw"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h1>The Chalets</h1>
+      <p class="lead">Three timber chalets, each architect-designed, each entirely private. Spa baths that open to garden views. Kitchens stocked for real cooking. Decks that face the mountains and catch the morning sun.</p>
+    </div>
+  </section>
 
-  <section class="chalets-listing">
-    <div class="container">
-      <div class="intro fade-in">
-        <p class="lead">
-          Every chalet is crafted from timber, filled with natural light, and completely self-contained. Spa baths, full kitchens, sun-drenched decks, and views of the Dorrigo escarpment from every room. You won't need to leave unless you want to.
-        </p>
-        <div class="shared-features">
-          <h4>Every Chalet Includes</h4>
-          <ul>
-            <li>Architect-designed timber construction</li>
-            <li>Spa bath</li>
-            <li>Full kitchen with oven, ceramic cooktop & 210L fridge</li>
-            <li>Reverse cycle air conditioning & ceiling fans</li>
-            <li>Sun-drenched deck with electric BBQ</li>
-            <li>Queen beds with quality linen</li>
-            <li>Mountain views from every room</li>
-          </ul>
+  <!-- Shared features -->
+  <section class="shared section--parchment" aria-label="What every chalet includes">
+    <div class="shared__inner">
+      <h2>Every chalet includes</h2>
+      <div class="shared__grid">
+        <div class="shared__item">
+          <h4>Spa bath</h4>
+          <p>Deep soaking tub with mountain or garden views</p>
+        </div>
+        <div class="shared__item">
+          <h4>Full kitchen</h4>
+          <p>Ceramic cooktop, full oven, microwave, 210L fridge</p>
+        </div>
+        <div class="shared__item">
+          <h4>Sun-drenched deck</h4>
+          <p>With electric BBQ and escarpment views</p>
+        </div>
+        <div class="shared__item">
+          <h4>Queen beds</h4>
+          <p>Quality linen, ceiling fans, reverse-cycle A/C</p>
+        </div>
+        <div class="shared__item">
+          <h4>Architect-designed</h4>
+          <p>Crafted from timber with sliding glass doors throughout</p>
+        </div>
+        <div class="shared__item">
+          <h4>Self-contained</h4>
+          <p>Everything you need — just bring food and good company</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="chalets-grid">
-        <ChaletCard
-          name="The Bower"
-          tagline="Couples Retreat"
-          description="Tucked away on the eastern edge of the property, entirely by itself. One queen bedroom, a spa bath with sliding doors to a private garden, and the kind of quiet you forgot existed. Elegant and simple — designed for two people who want the world to go away for a while."
-          image={bowerExterior}
-          imageAlt="The Bower chalet — elegant timber architecture with round window and gabled roof"
-          bedrooms="1 Bedroom"
-          guests="2 Guests"
-          href="/chalets/the-bower/"
-        />
-
-        <ChaletCard
-          name="The Ridge"
-          tagline="Family Chalet"
-          description="On the western end of the property with two bedrooms, a generous living space, and one of the best decks on the property. The golden hour light on the Dorrigo escarpment from this spot is something else entirely."
-          image={ridgeExterior}
-          imageAlt="The Ridge chalet at golden hour with the Dorrigo mountains rising behind"
-          bedrooms="2 Bedrooms"
-          guests="6 Guests"
-          href="/chalets/the-ridge/"
-          reverse
-        />
-
-        <ChaletCard
-          name="Tallowood"
-          tagline="Family Chalet"
-          description="Two bedrooms with a distinctive architectural character — that round window is an icon of the property. Lush gardens, accessible design with separate shower, and views from the kitchen that make cooking feel like a luxury."
-          image={tallowoodExterior}
-          imageAlt="Tallowood chalet set among lush gardens with the Dorrigo escarpment behind"
-          bedrooms="2 Bedrooms"
-          guests="6 Guests"
-          href="/chalets/tallowood/"
-        />
+  <!-- The Bower -->
+  <section class="chalet-detail section--linen" aria-label="The Bower" id="the-bower">
+    <div class="chalet-detail__inner">
+      <div class="chalet-detail__images">
+        <div class="chalet-detail__img-main img-frame">
+          <Image src={bowerExt} alt="The Bower — timber cladding with a round gabled window, nestled among gardens" widths={[600, 900, 1200]} sizes="(max-width: 768px) 90vw, 50vw" loading="lazy" />
+        </div>
+        <div class="chalet-detail__img-secondary img-frame">
+          <Image src={bowerInt} alt="The Bower interior — warm timber walls, comfortable furnishings, soft afternoon light" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 25vw" loading="lazy" />
+        </div>
+      </div>
+      <div class="chalet-detail__text">
+        <span class="chalet-detail__tag">Couples</span>
+        <h2>The Bower</h2>
+        <p class="lead">Elegant and simple. One bedroom. Complete privacy.</p>
+        <p>Tucked at the eastern edge of the property, The Bower is our romantic retreat. The spa bath has sliding doors that open onto a private garden — soak under the stars with nobody around for acres. A large living area flows onto the deck, where the escarpment fills the horizon.</p>
+        <ul class="chalet-detail__specs">
+          <li>1 queen bedroom</li>
+          <li>Spa bath with garden views</li>
+          <li>Large living area</li>
+          <li>Private deck with BBQ</li>
+          <li>Carport</li>
+        </ul>
+        <div class="chalet-detail__actions">
+          <a href="/chalets/the-bower" class="btn btn--outline">Full details & gallery</a>
+          <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--primary" target="_blank" rel="noopener">Book The Bower</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="booking-cta">
-    <div class="container">
-      <div class="booking-cta__content fade-in">
-        <h2>Book Direct, Save More</h2>
-        <p>Skip the platform fees. When you book directly with us, you get the best rate and you're dealing with Sophie — not an algorithm.</p>
-        <a
-          href="https://apac.littlehotelier.com/properties/promisedlanddirect"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-primary"
-        >
-          Check Availability
-        </a>
+  <!-- Cinematic break -->
+  <div class="showcase" aria-label="Interior view">
+    <Image src={showcaseImage} alt="Living area looking through floor-to-ceiling glass to the deck and mountains beyond" widths={[800, 1200, 1600, 2000]} sizes="100vw" loading="lazy" />
+  </div>
+
+  <!-- The Ridge -->
+  <section class="chalet-detail chalet-detail--reverse section--parchment" aria-label="The Ridge" id="the-ridge">
+    <div class="chalet-detail__inner">
+      <div class="chalet-detail__images">
+        <div class="chalet-detail__img-main img-frame">
+          <Image src={ridgeExt} alt="The Ridge at golden hour — mountains glowing amber behind the timber chalet" widths={[600, 900, 1200]} sizes="(max-width: 768px) 90vw, 50vw" loading="lazy" />
+        </div>
+        <div class="chalet-detail__img-secondary img-frame">
+          <Image src={ridgeInt} alt="The Ridge lounge area — comfortable seating, timber beams, warm natural light" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 25vw" loading="lazy" />
+        </div>
+      </div>
+      <div class="chalet-detail__text">
+        <span class="chalet-detail__tag">Family</span>
+        <h2>The Ridge</h2>
+        <p class="lead">Two bedrooms. Room for the whole family. Mountain views from every window.</p>
+        <p>At the western end of the property, The Ridge sits entirely on its own, separated from Tallowood by mature trees. Two bedrooms — a queen, and a room with a queen and two singles — make it ideal for families or two couples travelling together. The living area opens onto a generous deck with views that stretch to the escarpment.</p>
+        <ul class="chalet-detail__specs">
+          <li>2 bedrooms (queen + queen & 2 singles)</li>
+          <li>Spa bath</li>
+          <li>Large living area</li>
+          <li>Deck with BBQ</li>
+        </ul>
+        <div class="chalet-detail__actions">
+          <a href="/chalets/the-ridge" class="btn btn--outline">Full details & gallery</a>
+          <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--primary" target="_blank" rel="noopener">Book The Ridge</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <Footer slot="footer" />
+  <!-- Tallowood -->
+  <section class="chalet-detail section--linen" aria-label="Tallowood" id="tallowood">
+    <div class="chalet-detail__inner">
+      <div class="chalet-detail__images">
+        <div class="chalet-detail__img-main img-frame">
+          <Image src={tallowoodExt} alt="Tallowood chalet — timber exterior with round window, escarpment visible through trees" widths={[600, 900, 1200]} sizes="(max-width: 768px) 90vw, 50vw" loading="lazy" />
+        </div>
+        <div class="chalet-detail__img-secondary img-frame">
+          <Image src={tallowoodInt} alt="Tallowood interior — pink sofa, mountain views through floor-to-ceiling glass" widths={[400, 600]} sizes="(max-width: 768px) 45vw, 25vw" loading="lazy" />
+        </div>
+      </div>
+      <div class="chalet-detail__text">
+        <span class="chalet-detail__tag">Family</span>
+        <h2>Tallowood</h2>
+        <p class="lead">Two bedrooms. Warm timber interiors. Accessible bathroom.</p>
+        <p>Named after the towering tallowood trees that surround it, this chalet sits alongside The Ridge at the western end of the property, separated by mature plantings for privacy. The bathroom is accessible, with a spa bath and separate shower. Interiors glow with warm timber and natural light, and the mountain views through the glass walls are the best alarm clock we know.</p>
+        <ul class="chalet-detail__specs">
+          <li>2 bedrooms (queen + queen & 2 singles)</li>
+          <li>Accessible spa bath + separate shower</li>
+          <li>Large living area</li>
+          <li>Deck with BBQ</li>
+        </ul>
+        <div class="chalet-detail__actions">
+          <a href="/chalets/tallowood" class="btn btn--outline">Full details & gallery</a>
+          <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--primary" target="_blank" rel="noopener">Book Tallowood</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band section--dark" aria-label="Book your stay">
+    <div class="cta-band__inner">
+      <h2>Ready to choose your chalet?</h2>
+      <p>Book direct for the best rates. No middleman, no booking fees.</p>
+      <a href="https://apac.littlehotelier.com/properties/promisedlanddirect" class="btn btn--amber" target="_blank" rel="noopener">Check Availability</a>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
-  .chalets-listing {
-    padding: var(--space-2xl) 0;
-  }
+  /* Hero — page-specific overrides (different overlay gradient, content layout) */
+  .hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(26, 30, 36, 0.4) 60%, rgba(26, 30, 36, 0.75) 100%); }
+  .hero__content { position: relative; z-index: 2; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 4rem; width: 100%; color: var(--color-mist); }
+  .hero h1 { margin-bottom: 1rem; }
+  .hero .lead { max-width: 56ch; }
 
-  .intro {
-    max-width: 740px;
-    margin-bottom: var(--space-2xl);
+  /* Shared features */
+  .shared { padding: clamp(3rem, 6vw, 5rem) 1.5rem; }
+  .shared__inner { max-width: 72rem; margin: 0 auto; }
+  .shared__inner h2 { margin-bottom: 2rem; text-align: center; }
+  .shared__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
-
-  @media (min-width: 768px) {
-    .intro {
-      margin-bottom: var(--space-3xl);
-    }
+  .shared__item {
+    padding: 1.5rem;
+    background: var(--color-linen);
+    border-radius: 0.5rem;
   }
+  .shared__item h4 { margin-bottom: 0.25rem; font-weight: 400; }
+  .shared__item p { font-size: 0.9rem; color: var(--color-escarpment); max-width: none; }
 
-  .shared-features {
-    margin-top: var(--space-xl);
-    padding: var(--space-lg);
-    background: var(--mist-warm);
-    border-left: 3px solid var(--amber);
-  }
+  /* Chalet detail sections */
+  .chalet-detail { padding: clamp(4rem, 8vw, 7rem) 1.5rem; }
 
-  .shared-features h4 {
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--timber);
-    margin-bottom: var(--space-sm);
-  }
-
-  .shared-features ul {
-    list-style: none;
+  .chalet-detail__inner {
+    max-width: 72rem;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .chalet-detail__inner { grid-template-columns: 1fr 1fr; gap: 5rem; }
+    .chalet-detail--reverse .chalet-detail__images { order: 1; }
+  }
+
+  .chalet-detail__images { position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem; }
+  .chalet-detail__img-main { border-radius: 0.5rem; overflow: hidden; }
+  .chalet-detail__img-secondary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+    border: 4px solid var(--color-mist);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .chalet-detail__tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-amber);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .chalet-detail__text h2 { margin-bottom: 0.75rem; }
+  .chalet-detail__text .lead { margin-bottom: 1rem; }
+  .chalet-detail__text p { color: var(--color-escarpment); margin-bottom: 1rem; }
+
+  .chalet-detail__specs {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
-
-  @media (min-width: 640px) {
-    .shared-features ul {
-      grid-template-columns: 1fr 1fr;
-    }
+  .chalet-detail__specs li {
+    background: var(--color-parchment);
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: var(--color-timber);
   }
+  .section--parchment .chalet-detail__specs li { background: var(--color-linen); }
 
-  .shared-features li {
-    font-size: 0.95rem;
-    color: var(--text-mid);
-    padding-left: 1.25rem;
-    position: relative;
-  }
+  .chalet-detail__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
 
-  .shared-features li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.6em;
-    width: 6px;
-    height: 6px;
-    background: var(--amber);
-    border-radius: 50%;
+  /* Showcase */
+  .showcase { aspect-ratio: 21 / 9; overflow: hidden; width: 100%; }
+  .showcase img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+  .showcase:hover img { transform: scale(1.03); }
+  @media (max-width: 768px) { .showcase { aspect-ratio: 16 / 9; } }
+  @media (prefers-reduced-motion: reduce) { .showcase img { transition: none; } .showcase:hover img { transform: none; } }
 
-  .chalets-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xl);
-  }
-
-  @media (min-width: 768px) {
-    .chalets-grid {
-      gap: var(--space-3xl);
-    }
-  }
-
-  .booking-cta {
-    padding: var(--space-2xl) 0;
-    background: var(--timber-deep);
-    text-align: center;
-  }
-
-  .booking-cta__content {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .booking-cta h2 {
-    color: var(--mist);
-    margin-bottom: var(--space-sm);
-  }
-
-  .booking-cta p {
-    color: rgba(247, 244, 239, 0.7);
-    margin: 0 auto var(--space-lg);
-  }
-
-  .booking-cta .btn-primary {
-    background: var(--amber);
-    color: var(--timber-deep);
-  }
-
-  .booking-cta .btn-primary:hover {
-    background: var(--amber-light);
-    transform: translateY(-2px);
-  }
+  /* CTA Band */
+  .cta-band { padding: clamp(4rem, 8vw, 6rem) 1.5rem; text-align: center; }
+  .cta-band__inner { max-width: 42rem; margin: 0 auto; }
+  .cta-band h2 { color: var(--color-mist); margin-bottom: 1rem; }
+  .cta-band p { color: rgba(247, 244, 239, 0.75); margin: 0 auto 2rem; }
 </style>

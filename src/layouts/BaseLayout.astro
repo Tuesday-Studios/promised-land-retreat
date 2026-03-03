@@ -1,0 +1,200 @@
+---
+import SiteNav from '@/components/custom/SiteNav.astro'
+import Footer1 from '@/components/blocks/footer-1.astro'
+import '@/styles/global.css'
+
+interface Props {
+  title: string
+  description: string
+  ogImage?: string
+  canonicalPath?: string
+  transparentHeader?: boolean
+}
+
+const { title, description, ogImage = '/og-default.jpg', canonicalPath, transparentHeader = false } = Astro.props
+const canonicalURL = new URL(canonicalPath || Astro.url.pathname, Astro.site || 'https://promisedlandretreat.com.au')
+
+const headerMenus = [
+  {
+    text: 'Chalets',
+    href: '/chalets',
+    links: [
+      { text: 'The Bower', href: '/chalets/the-bower' },
+      { text: 'The Ridge', href: '/chalets/the-ridge' },
+      { text: 'Tallowood', href: '/chalets/tallowood' },
+    ],
+  },
+  { text: 'The Property', href: '/property' },
+  { text: 'Location', href: '/location' },
+  { text: 'Contact', href: '/contact' },
+]
+
+const footerMenus = [
+  {
+    text: 'Chalets',
+    links: [
+      { text: 'The Bower', href: '/chalets/the-bower' },
+      { text: 'The Ridge', href: '/chalets/the-ridge' },
+      { text: 'Tallowood', href: '/chalets/tallowood' },
+    ],
+  },
+  {
+    text: 'Explore',
+    links: [
+      { text: 'The Property', href: '/property' },
+      { text: 'Location & Area', href: '/location' },
+      { text: 'Contact Us', href: '/contact' },
+    ],
+  },
+  {
+    text: 'Visit',
+    links: [
+      { text: 'Book Direct', href: 'https://apac.littlehotelier.com/properties/promisedlanddirect' },
+      { text: 'Gift Vouchers', href: '/contact' },
+      { text: 'Directions', href: '/contact' },
+    ],
+  },
+]
+
+const footerLinks = [
+  { text: '0494 107 195', href: 'tel:0494107195', icon: 'phone' },
+  { text: 'sophie@promisedlandretreat.com.au', href: 'mailto:sophie@promisedlandretreat.com.au', icon: 'mail' },
+]
+
+const footerSocials = [
+  'https://www.facebook.com/pages/Promised-Land-Retreat/130155923704489',
+  'https://www.instagram.com/explore/tags/promisedlandretreat/',
+]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: 'Promised Land Retreat',
+  description: 'Three architect-designed timber chalets on 100 acres in the Bellinger Valley, NSW.',
+  url: 'https://promisedlandretreat.com.au',
+  telephone: '0494 107 195',
+  email: 'sophie@promisedlandretreat.com.au',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '934 Promised Land Road',
+    addressLocality: 'Gleniffer',
+    addressRegion: 'NSW',
+    addressCountry: 'AU',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -30.425,
+    longitude: 152.775,
+  },
+  image: 'https://promisedlandretreat.com.au/og-default.jpg',
+  priceRange: '$$',
+  starRating: {
+    '@type': 'Rating',
+    ratingValue: '5',
+  },
+}
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.toString()} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#3D2415" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Promised Land Retreat" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Fonts: preconnect then load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <SiteNav
+      transparent={transparentHeader}
+      menus={headerMenus}
+    />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer class="footer-wrapper">
+      <div class="acknowledgment">
+        <p>Promised Land Retreat stands on the traditional lands of the Gumbaynggirr people. We acknowledge their continuing connection to land, waters, and community, and pay our respects to Elders past, present, and emerging.</p>
+      </div>
+      <Footer1
+        logo={{
+          text: 'Promised Land Retreat',
+          href: '/',
+        }}
+        description="Three architect-designed timber chalets on 100 acres in the Bellinger Valley, NSW. Featured in Lonely Planet Australia."
+        menus={footerMenus}
+        links={footerLinks}
+        socials={footerSocials}
+      />
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Promised Land Retreat. 934 Promised Land Road, Gleniffer, NSW. Photography by Gethin Coles / Real Media.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .footer-wrapper {
+    background: var(--color-timber-deep);
+    color: var(--color-parchment);
+  }
+
+  .acknowledgment {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 0;
+    border-bottom: 1px solid rgba(237, 230, 216, 0.15);
+  }
+
+  .acknowledgment p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-bark);
+    max-width: none;
+    padding-bottom: 2rem;
+  }
+
+  .footer-bottom {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(237, 230, 216, 0.15);
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--color-bark);
+    max-width: none;
+  }
+</style>
